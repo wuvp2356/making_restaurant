@@ -1,10 +1,11 @@
 package com.example.making_restaurant.application.service;
 
-import org.springframework.stereotype.Service;
-import com.example.making_restaurant.infrastructure.Menu;
-import com.example.making_restaurant.infrastructure.MenuRepository;
-
 import java.util.UUID;
+
+import com.example.making_restaurant.infrastructure.Ramen;
+import com.example.making_restaurant.infrastructure.RamenRepository;
+
+import org.springframework.stereotype.Service;
 
 /**
  * メニューのサービスクラス
@@ -37,29 +38,30 @@ import java.util.UUID;
  * あ、あとgit push ってできる？
  */
 @Service
-public class MenuService {
-    private final MenuRepository menuRepository;
+public class RamenService {
+    private final RamenRepository ramenRepository;
 
-    public MenuService(MenuRepository menuRepository) {
-        this.menuRepository = menuRepository;
+    public RamenService(RamenRepository ramenRepository) {
+        this.ramenRepository = ramenRepository;
     }
 
     /**
      * メニューを全検索する
      */
-    public Iterable<Menu> findAll() {
-        return menuRepository.findAll();
+    public Iterable<Ramen> findAll() {
+        return ramenRepository.findAll();
     }
 
     /**
      * メニューを新しく作る
      */
-    public Menu create(String name, Integer price) {
-        Menu menu = new Menu();
-        menu.setId(UUID.randomUUID());
-        menu.setName(name);
-        menu.setPrice(price);
+    public Ramen create(String id, String name,String genre) {
+        final Ramen ramen = new Ramen();
+        ramen.setId(UUID.randomUUID());
+        ramen.setId(id);
+        ramen.setName(name);
+        ramen.setGenre(genre);
         //return menu;
-        return menuRepository.save(menu);
+        return ramenRepository.save(ramen);
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.example.making_restaurant.infrastructure.MenuRepository;
 import com.example.making_restaurant.infrastructure.Menu;
 
+
 @RestController
 @RequestMapping("api/menu")
 public class MenuController {
@@ -35,6 +36,7 @@ public class MenuController {
     // いま http://localhost:8080/api/menu/post (menuが抜けてた。。)ってやると、
     // 「新メニュー」っていうメニューがどんどん登録されていく
     // で、こういう感じにcontrollerで処理を書くのはfat controllerっていうダメな書き方
+    // コントローラは振り分け役。こういう処理はサービスの役割。
     @GetMapping("post")
     public Menu saveMenu() {
         Menu menu = new Menu();
@@ -43,5 +45,5 @@ public class MenuController {
         menu.setPrice(100);
         return menuRepository.save(menu);
     }
-    // 一応これで動くようにはなってるはず
+    
 }
