@@ -1,7 +1,7 @@
 package com.example.making_restaurant.presentation.controller;
 
 import java.io.FileReader;
-// なんか必要なimportも消してない？alt shitf o
+
 import java.io.IOException;
 import java.util.List;
 
@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-// @RestController
 @RequestMapping("/")
 public class HelloController {
 
