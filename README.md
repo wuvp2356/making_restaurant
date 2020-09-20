@@ -1,21 +1,17 @@
 # making_restaurant
-<!-- ついでにこのファイルの記法って前教えたっけ -->
-<!-- っていうのが簡単に書けるよっていうやつ -->
-<!-- 色々markdownで書けるから覚えておくといいよ -->
-<!-- このファイルをgithubにpushしたらgithubのページ行ってみて -->
-<!-- q -->
-<!-- すまぬ、とりあえず、全部pushしなければ、、メッセージの修正はどうしよ、そうやね、これどうやって、ぬけるんや。azasu。-->
+<!-- #入れ忘れてた。。。 -->
+<!---->
 <!-- markdownっていう記法でこんな感じで書くと右みたいなのが作れる -->
 ## 基本的なgitコマンド
 
-- [git_status](git_status)
-- [git_add](git_add)
-- [git_commit](git_commit)
-- [git_push](git_push)
-- [git_pull](git_pull)
-- [git_branch](git_branch)
-- [git_switch](git_switch)
-- [git_log](git_log)
+- [git status](#git_status)
+- [git add](#git_add)
+- [git commit](#git_commit)
+- [git push](#git_push)
+- [git pull](#git_pull)
+- [git branch](#git_branch)
+- [git switch](#git_switch)
+- [git log](#git_log)
 
 ### git_status
 
@@ -37,7 +33,6 @@ git add file_name
 # ディレクトリ下の変更をステージングする
 git add dirctory_name
 ```
-
 ### git_commit
 
 ステージングした内容をコミットする

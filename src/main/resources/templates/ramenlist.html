@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ramensearch</title>
+
+</head>
+
+<body>
+    <table class="list">
+        <tr>
+            <th>ID</th>
+            <th>店名</th>
+            <th>ジャンル</th>
+        </tr>
+        <tr th:each="ramen : ${ramenlist}" th:object="${ramen}">
+            <td th:text="${ramen.id}">ああああ</td>
+            <td th:text="${ramen.name}">いいいい</td>
+            <td th:text="${ramen.genre}">うううう</td>
+        </tr>
+    </table>
+</body>
+
+</html>

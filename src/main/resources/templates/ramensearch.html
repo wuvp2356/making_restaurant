@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <div>ラーメン屋検索</div>
+    <!--こんな感じでサーバからページにデータを受け渡しするよ-->
+    <!--ちなみにth:textはこのタグ内のテキストを""の中身で入れ替えるってモノだから-->
+    <div th:text="${message}">ここに書いても${message}で上書きされるよ</div>
+
+    <form action="/ramensearch" method="post">
+        <input type="textarea" name="name" value="">
+        <input type="submit" value="送信">
+      </form>
+
+</body>
+</html>

@@ -7,6 +7,9 @@ import com.example.making_restaurant.infrastructure.RamenRepository;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * メニューのサービスクラス
  * ユーザが行いたい操作（いわゆるユースケース）を記述する
@@ -48,8 +51,8 @@ public class RamenService {
     /**
      * メニューを全検索する
      */
-    public Iterable<Ramen> findAll() {
-        return ramenRepository.findAll();
+    public List<Ramen> findAll() {
+        return (List)ramenRepository.findAll();
     }
 
     /**
@@ -63,5 +66,43 @@ public class RamenService {
         ramen.setGenre(genre);
         //return menu;
         return ramenRepository.save(ramen);
+ 
+ 
+    }
+
+        /**
+     * メニューを検索
+     */
+    // public List<Ramen> find(String id, String name,String genre) {
+    //     final Ramen ramen = new Ramen();
+    //     ramen.setId(UUID.randomUUID());
+    //     ramen.setId(id);
+    //     ramen.setName(name);
+    //     ramen.setGenre(genre);
+        //return menu;
+
+        
+    public List<Ramen> find() {
+        List<Ramen>  list=(List)ramenRepository.findAll();
+        List<Ramen>  list2=new ArrayList<Ramen>();
+
+        for (Ramen ramen2 : list) {
+            if(ramen2.getName().contains("（")){
+                list2.add(ramen2);
+            }
+        }
+        return list2;
+    }
+
+    public List<Ramen> find(String word) {
+        List<Ramen>  list=(List)ramenRepository.findAll();
+        List<Ramen>  list2=new ArrayList<Ramen>();
+
+        for (Ramen ramen2 : list) {
+            if(ramen2.getName().contains(word)){
+                list2.add(ramen2);
+            }
+        }
+        return list2;
     }
 }
