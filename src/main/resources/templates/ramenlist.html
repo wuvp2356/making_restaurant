@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <table class="list">
+    <table class="list" border="3">
         <tr>
             <th>ID</th>
             <th>店名</th>
@@ -20,6 +20,10 @@
             <td th:text="${ramen.genre}">うううう</td>
         </tr>
     </table>
+    <form action="/ramen_top" method="get">
+        <input type="submit" value="戻る">
+      </form>
+    
 </body>
 
 </html>

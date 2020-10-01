@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>eventlist</title>
+
+</head>
+
+<body>
+    <table class="list">
+        <tr>
+            <th>イベント名</th>
+            <th>開始</th>
+            <th>終了</th>
+        </tr>
+        <tr th:each="file : ${eventlist}" th:object="${file}">
+            <td th:text="${file.name}">いいいい</td>
+            <td th:text="${file.startdate}">うううう</td>
+            <td th:text="${file.enddate}">うううう</td>
+        </tr>
+    </table>
+</body>
+
+</html>
