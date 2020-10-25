@@ -9,12 +9,19 @@
 
 <body>
 
-        画像は<img th:src="${resources}"/>です
-
+    <table class="list" border="1">
+        <th>画像</th>
+        <th>時間</th>
+        <tr th:each="element : ${rmList}" th:object="${rmList}">
+            <td><img src ="" th:src="${element.getFileName()}"></td>
+            <td><p th:text="${element.getLastModified()}"></p></td>
+        </tr>
+    </table>
     <form action="/ramen_top" method="get">
         <input type="submit" value="戻る">
-      </form>
-    
+    </form>
+
+
 </body>
 
 </html>
